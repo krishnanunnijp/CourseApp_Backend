@@ -18,4 +18,9 @@ public class courses {
         System.out.println(c.toString());
         return "added successfully";
     }
+
+    @GetMapping("/view")
+    public String view(){
+        return "this is view page";
+    }
 }
