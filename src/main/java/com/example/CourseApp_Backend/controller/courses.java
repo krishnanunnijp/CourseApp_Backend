@@ -1,12 +1,13 @@
 package com.example.CourseApp_Backend.controller;
 
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class courses {
 
-    @Override
-    public String toString() {
-        return "";
+    @GetMapping("/")
+    public String welcome() {
+        return "welcome page";
     }
 }
