@@ -1,21 +1,21 @@
 package com.example.CourseApp_Backend.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import com.example.CourseApp_Backend.dao.CourseDao;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "Course")
 public class Course {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int Id;
     private String title;
     private String description;
     private String venue;
     private int duration;
     private String date;
+
+
 
     public Course() {
     }
