@@ -30,4 +30,21 @@ public class courseController {
     public List<Course> view(){
         return (List<Course>) dao.findAll();
     }
+@CrossOrigin(origins = "*")
+    @DeleteMapping("/delete")
+    public Map<String, String>delete(@RequestBody Resp resp) {
+        List<Course> courses = (List<Course>) dao.findAll();
+        HashMap<String, String> map = new HashMap<>();
+
+        for(int i = 0; i < courses.size(); i++) {
+
+            Course c = courses.get(i);
+            map.put("inside", c.getTitle());
+        if (c.getTitle().equals(resp.getName())) {
+            dao.delete(c);
+            map.put("status","success");
+        }
+}
+        return map;
+    }
 }
